@@ -25,7 +25,12 @@ def marsrover():
         rover = j_obj['photos'][0]['rover']['name']
         return render_template('marsrover.html', image=image, earth_date=earth_date, launch_date=launch_date, landing_date=landing_date, status=status, rover=rover, camera=camera)
     else:
-        return redirect(url_for('index'))
+        return redirect(url_for('empty'))
+
+
+@app.route('/empty')
+def empty():
+    return render_template('empty.html')
 
 
 if __name__ == '__main__':
