@@ -16,6 +16,7 @@ App was set-up in a virtual environment thats is, an isolated Python runtime env
 
 #### Environment Set-Up
 - Download python [https://www.python.org/downloads/](here)
+- Clone or download this repository
 - Installation set-up require Unix-Style Terminal or Git Bash Terminal for windows
 - Check for successful download with `python --version`
 - Navigate into the 'marsrover' directory, run ```python app.py```
