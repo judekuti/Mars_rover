@@ -26,8 +26,8 @@ def marsrover():
     j_obj = r.json()
     photos = j_obj['photos']
 
-    # should api lack details such as a day without photo or a future untaken one
-    # this handles the error by simply redirecting the user
+    # Should api lack details such as a day without photo or a future untaken one
+    # This handles the error by simply redirecting the user to /empty
     if photos != []:
         image = j_obj['photos'][0]['img_src']
         earth_date = j_obj['photos'][0]['earth_date']
@@ -40,7 +40,7 @@ def marsrover():
     else:
         return redirect(url_for('empty'))
 
-# page redirected to where api is empty
+# page redirected where api is empty
 
 
 @app.route('/empty')
