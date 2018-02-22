@@ -3,18 +3,21 @@ import requests
 
 app = Flask(__name__)
 
-
+# home page route
 @app.route('/')
 def index():
     return render_template('index.html')
 
-
+# marsrover page calls the api using flask's requests
 @app.route('/marsrover', methods=['GET', 'POST'])
 def marsrover():
     date = request.form['date']
     r = requests.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=' + date + '&api_key=G5y2M6Nxqx8ZO7E3Fr4sHOOzWTxmknVNYvOMJnZW')
     j_obj = r.json()
     photos = j_obj['photos']
+
+    # should api lack details such as a day without photo or a future untaken one
+    # this handles the error by simply redirecting the user
     if photos != []:
         image = j_obj['photos'][0]['img_src']
         earth_date = j_obj['photos'][0]['earth_date']
@@ -27,7 +30,7 @@ def marsrover():
     else:
         return redirect(url_for('empty'))
 
-
+# page redirected to where api is empty
 @app.route('/empty')
 def empty():
     return render_template('empty.html')
