@@ -12,31 +12,23 @@
 <body>
     <div class="parallax">
         <div class="container d-flex justify-content-center align-items-center parallax-content" style="height:100vh;">
-            <div class="row" style="width:1024px;">
-                <div class="col-sm-12 col-md-6">
+            <div class="row" style="width:1024px; margin-top: 20px">
+                <div class="col-sm-12 col-md-8">
                     <div class="card" style="background-color:rgba(255,255,255,0.6);">
                         <a href= "{{ image }}" download>
                         <img  src="{{ image }}" class="img-fluid card-img-top w-100 d-block" style="width:100%;">
                         </a>
-                        <div class="card-body">
-                            <h4 class="card-title">Name of Rover: {{ rover }}</h4>
-                            <p class="card-text">Posted: {{ earth_date }}</p>
-                            <p class="card-text">Launch Date: {{  launch_date}}</p>
-                            <p class="card-text">Landing Date: {{ landing_date }}</p>
-                            <p class="card-text">Mission Status: {{ status }}</p>
-                            <p class="card-text">Camera: {{ camera }}</p>
-
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6">
-                    <div class="card" style="background-color:rgba(255,255,255,0.6);">
-                        <a href= "{{ image }}" download>
-                        <img src="{{ image }}" class="img-fluid card-img-top w-100 d-block" style="width:100%;"></a>
-                        <div class="card-body">
-                            <h4 class="card-title">Name of Rover: {{ rover }}</h4>
-                            <p class="card-text">Date of Image: {{ earth_date }}</p>
-                        </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card-body">
+                            <h4 class="card-title" style="text-align: center; font-size:24px;">Name of Rover: {{ rover }}</h4>
+                            <p class="card-text" style="text-align: center; font-size:14px;">Posted: {{ earth_date }}</p>
+                            <p class="card-text" style="text-align: center; font-size:14px;">Launch Date: {{  launch_date}}</p>
+                            <p class="card-text" style="text-align: center; font-size:14px;">Landing Date: {{ landing_date }}</p>
+                            <p class="card-text" style="text-align: center; font-size:14px;">Mission Status: {{ status }}</p>
+                            <p class="card-text" style="text-align: center; font-size:14px;">Camera: {{ camera }}</p>
+
                     </div>
                 </div>
             </div>
