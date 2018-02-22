@@ -22,6 +22,7 @@ def index():
 @app.route('/marsrover', methods=['GET', 'POST'])
 def marsrover():
     date = request.form['date']
+    # API key was exposed for the purpose of review
     r = requests.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=' + date + '&api_key=G5y2M6Nxqx8ZO7E3Fr4sHOOzWTxmknVNYvOMJnZW')
     j_obj = r.json()
     photos = j_obj['photos']
