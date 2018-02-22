@@ -17,7 +17,12 @@ def marsrover():
     j_obj = r.json()
     image = j_obj['photos'][0]['img_src']
     earth_date = j_obj['photos'][0]['earth_date']
-    return render_template('marsrover.html', image=image, date=date, earth_date=earth_date)
+    launch_date = j_obj['photos']['rover']['launch_date']
+    landing_date = j_obj['photos']['rover']['landing_date']
+    camera = j_obj['photos'][0]['rover']['cameras']['full_name']
+    status = j_obj['photos'][0]['rover']['status']
+    rover = j_obj['photos'][0]['rover']['name']
+    return render_template('marsrover.html', image=image, earth_date=earth_date, launch_date=launch_date, landing_date=landing_date, status=status, rover=rover)
 
 
 if __name__ == '__main__':
