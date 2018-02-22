@@ -1,14 +1,24 @@
-from flask import Flask, render_template, request, url_for, redirect
+#!/usr/local/bin/python
+
+from flask import Flask
+from flask import render_template
+from flask import request
+from flask import url_for
+from flask import redirect
 import requests
 
 app = Flask(__name__)
 
 # home page route
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
 # marsrover page calls the api using flask's requests
+
+
 @app.route('/marsrover', methods=['GET', 'POST'])
 def marsrover():
     date = request.form['date']
@@ -31,6 +41,8 @@ def marsrover():
         return redirect(url_for('empty'))
 
 # page redirected to where api is empty
+
+
 @app.route('/empty')
 def empty():
     return render_template('empty.html')
